@@ -1,0 +1,265 @@
+@import "../variables.less";
+@import "../mixins.less";
+
+.programs {
+  padding-top: 22px;
+
+  @media @tablet-width {
+    padding-top: 0;
+  }
+
+  @media @desktop-width {
+    padding-top: 80px;
+  }
+}
+
+.programs__list {
+  .list-style();
+
+  @media @desktop-width {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.programs__item {
+  position: relative;
+  padding: 30px 20px 4px;
+  background-color: @gray-light;
+
+  @media @tablet-width {
+    padding: 75px 280px 44px 52px;
+  }
+
+  @media @desktop-width {
+    padding: 76px 53px 45px;
+    width: 570px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 20px;
+
+    @media @tablet-width {
+      margin-top: 30px;
+    }
+
+    @media @desktop-width {
+      margin-top: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    width: 50px;
+    height: 50px;
+    background-color: @green;
+    border-radius: 50%;
+
+    @media @tablet-width {
+      top: 91px;
+      left: 446px;
+      width: 200px;
+      height: 200px;
+    }
+
+    @media @desktop-width {
+      top: 47px;
+      left: 53px;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &_slim {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 30px;
+      width: 35px;
+      height: 49px;
+      background: url("../img/icon-cat-slim.svg") no-repeat 0 0;
+
+      @media @tablet-width {
+        top: 80px;
+        left: 475px;
+        width: 141px;
+        height: 194px;
+      }
+
+      @media @desktop-width {
+        top: 41px;
+        left: 67px;
+        width: 71px;
+        height: 97px;
+      }
+    }
+  }
+
+  &_pro {
+    @media @tablet-width {
+      padding-right: 312px;
+    }
+
+    @media @desktop-width {
+      padding-right: 52px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 35px;
+      left: 13px;
+      width: 67px;
+      height: 28px;
+      background: url("../img/icon-cat-pro.svg") no-repeat 0 0;
+
+      @media @tablet-width {
+        top: 135px;
+        left: 412px;
+        width: 268px;
+        height: 113px;
+      }
+
+      @media @desktop-width {
+        top: 69px;
+        left: 35px;
+        width: 134px;
+        height: 57px;
+      }
+    }
+  }
+}
+
+.programs__title {
+  .uppercase();
+  margin: 0;
+  padding-left: 71px;
+  font-family: @main-font;
+  font-size: 24px;
+  line-height: 37px;
+  font-weight: 400;
+  color: @black;
+
+  @media @tablet-width {
+    padding: 0;
+    font-size: 36px;
+    line-height: 37px;
+  }
+
+  @media @desktop-width {
+    padding-left: 162px;
+  }
+}
+
+.programs__text {
+  margin-top: 29px;
+  margin-bottom: 0;
+
+  @media @tablet-width {
+    margin-top: 26px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media @desktop-width {
+    margin-top: 74px;
+  }
+}
+
+.programs__wrapper {
+  .bordered-top();
+  margin-top: 22px;
+  padding-top: 20px;
+
+  @media @tablet-width {
+    padding-top: 34px;
+    border: 0 none;
+  }
+
+  @media @desktop-width {
+    padding-top: 9px;
+  }
+}
+
+.programs__button {
+  .content-tagline();
+  .uppercase();
+  padding-right: 50px;
+  display: inline-block;
+  position: relative;
+  line-height: 16px;
+  text-decoration: none;
+
+  @media @tablet-width {
+    .content-tagline();
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 21px;
+    width: 18px;
+    height: 2px;
+    background-color: @black-lighten;
+
+    @media @tablet-width {
+      top: 8px;
+      right: 8px;
+      height: 3px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 16px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: @black-lighten;
+    border-right: 0;
+
+    @media @tablet-width {
+      top: 3px;
+      right: 2px;
+      border-width: 6px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      right: 12px;
+      width: 27px;
+
+      @media @tablet-width {
+        right: -4px;
+        width: 30px;
+      }
+    }
+
+    &::after {
+      right: 8px;
+
+      @media @tablet-width {
+        right: -8px;
+      }
+    }
+  }
+
+  &:active {
+    color: @black-30;
+
+    &::before,
+    &::after {
+      opacity: 0.3;
+    }
+  }
+}

@@ -1,0 +1,177 @@
+@import "../mixins.less";
+@import "../variables.less";
+
+.intro {
+  padding-top: 17px;
+  padding-bottom: 42px;
+
+  @media @tablet-width {
+    padding-top: 46px;
+    padding-bottom: 0;
+  }
+
+  @media @desktop-width {
+    padding-top: 73px;
+  }
+}
+
+.intro__title {
+  .title();
+  margin: 0;
+
+  @media @desktop-width {
+    padding-left: 1px;
+  }
+}
+
+.intro__list {
+  .list-style();
+  margin-top: 28px;
+  counter-reset: list1;
+
+  @media @tablet-width {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 72px;
+    margin-bottom: -31px;
+  }
+}
+
+.intro__item {
+  .content();
+  position: relative;
+  margin: 0;
+  padding: 3px 0 3px 80px;
+
+  @media @tablet-width {
+    padding: 113px 78px 132px 0;
+    width: 324px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media @desktop-width {
+    padding: 112px 0 50px;
+    width: 245px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 20px;
+
+    @media @tablet-width {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(2n-1) {
+    @media @tablet-width {
+      margin-right: 60px;
+    }
+  }
+
+  &:not(:nth-child(4n)) {
+    @media @desktop-width {
+      margin-right: 80px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: @green;
+
+    @media @tablet-width {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &::after {
+    @media @tablet-width {
+      position: absolute;
+      top: 88px;
+      font-family: @main-font;
+      font-size: 281px;
+      color: @gray-light;
+      z-index: -1;
+      counter-increment: list1;
+      content: counter(list1);
+    }
+  }
+
+  &_structure {
+    &::before {
+      background-image: url("../img/advantage-leaf@1x.png");
+
+      @media @retina {
+        background-image: url("../img/advantage-leaf@2x.png");
+        background-size: 52px auto;
+      }
+    }
+
+    &::after {
+      @media @tablet-width {
+        left: 118px;
+      }
+    }
+  }
+
+  &_cooking {
+    &::before {
+      background-image: url("../img/advantage-powder@1x.png");
+
+      @media @retina {
+        background-image: url("../img/advantage-powder@2x.png");
+        background-size: 58px auto;
+      }
+    }
+
+    &::after {
+      @media @tablet-width {
+        left: 111px;
+      }
+    }
+  }
+
+  &_replace {
+    &::before {
+      background-image: url("../img/advantage-dining@1x.png");
+
+      @media @retina {
+        background-image: url("../img/advantage-dining@2x.png");
+        background-size: 46px auto;
+      }
+    }
+
+    &::after {
+      @media @tablet-width {
+        left: 113px;
+      }
+    }
+  }
+
+  &_result {
+    &::before {
+      background-image: url("../img/advantage-clock@1x.png");
+
+      @media @retina {
+        background-image: url("../img/advantage-clock@2x.png");
+        background-size: 52px auto;
+      }
+    }
+
+    &::after {
+      @media @tablet-width {
+        left: 113px;
+      }
+    }
+  }
+}

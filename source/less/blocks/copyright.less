@@ -1,0 +1,67 @@
+@import "../variables.less";
+@import "../mixins.less";
+
+.copyright__text {
+  margin: 0 2px 0 -1px;
+  font-size: 16px;
+  line-height: 16px;
+  color: @black-lighten;
+
+  @media @tablet-width {
+    display: inline-block;
+    margin-right: 15px;
+  }
+}
+
+.copyright__icon {
+  margin-right: -9px;
+  margin-top: 2px;
+  width: 42px;
+  height: 50px;
+  fill: @gray-darken;
+
+  @media @tablet-width {
+    margin-right: -7px;
+  }
+
+  @media @desktop-width {
+    margin-right: -8px;
+  }
+}
+
+.copyright {
+  .bordered-top();
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+
+  @media @tablet-width {
+    margin-top: -4px;
+    padding: 0;
+    border: 0 none;
+  }
+
+  @media @desktop-width {
+    margin-top: -1px;
+  }
+
+  &:hover,
+  &:focus {
+    .copyright__icon {
+      fill: @green;
+    }
+  }
+
+  &:active {
+    .copyright__text {
+      color: @black-lighten-30;
+    }
+
+    .copyright__icon {
+      fill: @green;
+      opacity: 0.3;
+    }
+  }
+}

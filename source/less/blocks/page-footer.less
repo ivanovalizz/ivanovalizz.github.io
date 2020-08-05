@@ -1,0 +1,48 @@
+@import "../variables.less";
+@import "../mixins.less";
+
+.page-footer {
+  background-color: @gray-light;
+}
+
+.page-footer__container {
+  padding-top: 42px;
+  padding-bottom: 22px;
+
+  @media @tablet-width {
+    padding: 46px 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media @desktop-width {
+    padding: 50px 40px 60px;
+  }
+}
+
+.page-footer__logo {
+  display: block;
+  padding: 0 76px 27px;
+
+  @media @tablet-width {
+    margin-top: 4px;
+    margin-left: 1px;
+    padding: 0;
+  }
+
+  &:not(&_active) {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.page-footer__logo-image {
+  fill: @black;
+}

@@ -1,0 +1,37 @@
+@import "../variables.less";
+@import "../mixins.less";
+
+.button {
+  .form-label();
+  display: block;
+  padding: 11px 20px;
+  text-align: center;
+  color: @white;
+  text-decoration: none;
+  background-color: @green;
+
+  &:hover,
+  &:focus {
+    background-color: @green-dark;
+  }
+
+  &:active {
+    color: @white-30;
+    background-color: @green-dark;
+  }
+
+  &_success {
+    color: @black-lighten;
+    background-color: @gray-light;
+
+    &:hover,
+    &:focus {
+      background-color: @gray;
+    }
+
+    &:active {
+      color: @black-lighten-30;
+      background-color: @gray;
+    }
+  }
+}
